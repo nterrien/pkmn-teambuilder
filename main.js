@@ -106,6 +106,7 @@ function resetAdvancedSearch() {
     document.getElementById("ability-field").value = ""
     document.getElementById("region").value = ""
     document.getElementById("final-evo").checked = true
+    document.getElementById("mega").checked = "include"
     typeList.forEach(t => document.getElementById("select" + t).selectedIndex = 0)
     startAdvancedSearch()
 }
@@ -151,12 +152,14 @@ function startAdvancedSearch() {
     document.getElementById("region").value = region
 
     finalEvo = document.getElementById("final-evo").checked
+    filterMega = document.getElementById("mega").value
     filteredPokemons = pokemons.filter(pkmn =>
         (!typeList.includes(type1) || pkmn.types.includes(type1))
         && (!typeList.includes(type2) || pkmn.types.includes(type2))
         && (!abilityList.includes(ability) || pkmn.abilities.includes(ability))
         && (!regionList.includes(region) || pkmn.region == region)
         && (!finalEvo || pkmn.final)
+        && (filterMega == "include" || (filterMega == "exclude" && !pkmn.isMega) || (filterMega == "only" && pkmn.isMega))
         && (searchName.length == 0 || pkmn.name.toLowerCase().startsWith(searchName.toLowerCase()))
     )
     typeList.forEach(t => {

@@ -22,8 +22,9 @@
 		<h1 class="text-center">Pokémon Teambuilder</h1>
 
 		<div class="explainations">
-			This tool is a teambuilder, that can be used to check weaknesses and resistances of your Pokémon team. You can also check offensive type coverage <a
-				href="https://nterrien.github.io/pkmn-type-coverage/" target="_blank">here</a>.
+			This tool is a teambuilder, that can be used to check weaknesses and resistances of your Pokémon team. You
+			can also check offensive type coverage <a href="https://nterrien.github.io/pkmn-type-coverage/"
+				target="_blank">here</a>.
 
 			This tool is inspired by <a href="https://marriland.com/tools/team-builder/en/" target="_blank">Marriland's
 				Pokémon Team Builder</a>.
@@ -65,6 +66,14 @@
 					<div>
 						Fully Evolved
 						<input type="checkbox" id="final-evo" checked onchange="startAdvancedSearch()">
+					</div>
+					<div class="mega">
+						Mega:
+						<select id="mega" onchange="startAdvancedSearch()">
+							<option value="include" selected>Include</option>
+							<option value="exclude">Exclude</option>
+							<option value="only">Only</option>
+						</select>
 					</div>
 					<button onclick="resetAdvancedSearch()">Reset</button>
 				</div>

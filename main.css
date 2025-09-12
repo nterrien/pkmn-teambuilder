@@ -248,6 +248,11 @@ input {
     justify-content: center;
 }
 
+.mega {
+    display: flex;
+    gap: 5px
+}
+
 .type-select {
     display: flex;
     gap: 10px;
