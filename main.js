@@ -257,7 +257,7 @@ function resetPokemonInfo(index) {
     div.querySelector(".types").innerHTML = ""
     team[index].species = {}
 }
-function fillPokemonInfo(index, pkmn) {
+function fillPokemonInfo(index, pkmn, ability) {
     div = document.getElementById("pokemon-" + index)
     document.getElementsByName("pokemonName" + index)[0].value = pkmn.name
     div.querySelector(".sprite").innerHTML = pokemonIcon(pkmn.name)
@@ -267,6 +267,9 @@ function fillPokemonInfo(index, pkmn) {
         var option = document.createElement('option');
         option.value = i;
         option.innerHTML = a;
+        if (ability && ability == i) {
+            option.selected = true
+        }
         selectAbility.appendChild(option);
     })
     div.querySelector(".ability").innerHTML = ""
@@ -383,7 +386,7 @@ function importPaste() {
             pkmnName = line.replace("(M)", "").replace("(F)", "").split("@")[0].trim()
             species = pokemons.find(pkmn => pkmn.name == pkmnName)
             if (!species) {
-                // Nicknames. It can't be done by default because i named Battle Bond pokemon Plusle (Battle Bond). It could be rename Plusle-Battle-Bond
+                // Nicknames.
                 if (pkmnName.includes("(")) {
                     pkmnName = pkmnName.split("(")[1].replace(")", "").trim()
                     species = pokemons.find(pkmn => pkmn.name == pkmnName)
@@ -414,7 +417,7 @@ function importPaste() {
         team = importedTeam
         for (let i = 0; i < 6; i++) {
             if (team[i].species.name) {
-                fillPokemonInfo(i, team[i].species)
+                fillPokemonInfo(i, team[i].species, team[i].ability)
             }
             else {
                 resetPokemonInfo(i)
