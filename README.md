@@ -1,6 +1,6 @@
-# pkmn-odyssey-teambuilder
+# pkmn-teambuilder
 
-A teambuilder for Pokémon Odyssey. This tool is inspired by [Marriland's Pokémon Team Builder](https://marriland.com/tools/team-builder/en/). The code is adapted from [Pokémon Odyssey Teambuilder](https://github.com/nterrien/pkmn-odyssey-teambuilder)
+A teambuilder for Pokémon. This tool is inspired by [Marriland's Pokémon Team Builder](https://marriland.com/tools/team-builder/en/). The code is adapted from [Pokémon Odyssey Teambuilder](https://github.com/nterrien/pkmn-odyssey-teambuilder)
 
 Data and sprites https://github.com/PokeAPI/pokeapi/
 
